@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "5";
+const prefix = "1";
 /////////////////////////
 ////////////////////////
 
