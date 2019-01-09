@@ -340,7 +340,6 @@ client.on('message', message => {
         .setFooter('المزيد قريبا ان شاء الله!')
       message.channel.send(helpEmbed);
     }
-https://pastebin.com/tP2LfGhe
 });
 client.on('message', message => {  
             if(!message.channel.guild) return; 
