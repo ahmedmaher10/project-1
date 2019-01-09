@@ -355,7 +355,7 @@ m.sendMessage(args)
           client.on('message' , message => {
       if(message.author.bot) return;
 
-      if(message.content.startsWith(".bk")) {
+      if(message.content.startsWith("$")) {
         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
         let args = message.content.split(" ").slice(2);
      var codes = args.join(' ')
