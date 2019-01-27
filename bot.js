@@ -384,4 +384,8 @@ m.sendMessage(args)
             message.channel.send(`لقد تم ارسال هذه الرسالة الى ${message.guild.members.filter(m => m.roles.get(role.id)).size} عضو`)
         }
     });
+client.on('guildMemberAdd', member=> {
+    var role = member.guild.roles.find("name","!Givenchy Mamber");
+    member.addRole(role);
+});
 client.login(process.env.BOT_TOKEN);
