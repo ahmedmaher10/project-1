@@ -329,7 +329,10 @@ client.on('message', message => {
       message.channel.send(helpEmbed);
     }
 });
-
+client.on('guildMemberAdd', member=> {
+    var role = member.guild.roles.find("name","!Givenchy Mamber");
+    member.addRole(role);
+});
 client.on('message', message => {
     if (message.content === 'general_commands') {
         let helpEmbed = new Discord.RichEmbed()
