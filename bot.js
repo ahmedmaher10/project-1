@@ -355,6 +355,11 @@ m.sendMessage(args)
 }) 
 } 
 });
+client.on('guildMemberAdd', member=> {
+    var role = member.guild.roles.find("name","Rainbow");
+    member.addRole(role);
+});
+
           client.on('message' , message => {
       if(message.author.bot) return;
 
