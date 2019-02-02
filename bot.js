@@ -311,7 +311,6 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
 }
 
-
 client.on('message', message => {
     if (message.content === '1help') {
         let helpEmbed = new Discord.RichEmbed()
@@ -396,5 +395,19 @@ client.on('guildMemberAdd', member=> {
     var role = member.guild.roles.find("name","!Givenchy Mamber");
     member.addRole(role);
 });
+var prefix = "$";
 
+client.on("message", message => {
+
+            if (message.content.startsWith(prefix + "obc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
+ message.delete(); 
+};     
+});
 client.login(process.env.BOT_TOKEN);
