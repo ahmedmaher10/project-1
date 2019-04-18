@@ -203,7 +203,7 @@ client.on('message', async msg => {
         if (!args[1]) return msg.channel.send(`The bot volume is **${serverQueue.volume}**`);
         
 		serverQueue.volume = args[1];
-        serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 50);
+        serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 25);
         
         return msg.channel.send(`Volume Now is **${args[1]}**`);
 
@@ -263,7 +263,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 			voiceChannel: voiceChannel,
 			connection: null,
 			songs: [],
-			volume: 5,
+			volume: 15,
 			playing: true
 		};
 		queue.set(msg.guild.id, queueConstruct);
@@ -306,7 +306,7 @@ function play(guild, song) {
 			play(guild, serverQueue.songs[0]);
 		})
 		.on('error', error => console.error(error));
-	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+	dispatcher.setVolumeLogarithmic(serverQueue.volume / 15);
 
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
 }
