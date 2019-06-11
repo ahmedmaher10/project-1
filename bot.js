@@ -392,7 +392,7 @@ client.on('guildMemberAdd', member=> {
         }
     });
 client.on('guildMemberAdd', member=> {
-    var role = member.guild.roles.find("name","!Givenchy Mamber");
+    var role = member.guild.roles.find("name","Dragon CF  Member");
     member.addRole(role);
 });
 
